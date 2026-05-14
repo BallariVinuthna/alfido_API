@@ -33,4 +33,4 @@ Nexus is a premium, high-performance GitHub API integration platform built with 
 Inspired by modern SaaS dashboards and cyberpunk aesthetics, focusing on high-contrast neon accents against deep space-blue backgrounds.
 
 ---
-Designed with ❤️ by **Antigravity AI Architecture**
+
