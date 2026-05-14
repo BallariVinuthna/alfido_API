@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Futuristic GitHub Explorer</title>
+    <meta name="description" content="Discover developers and repositories with Nexus, a premium futuristic GitHub API dashboard.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="particles" id="particles-js"></div>
+        <nav class="container navbar">
+            <div class="logo">
+                <i class="fas fa-atom pulse-glow"></i>
+                <span>NEXUS</span>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="glass-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="container hero-content text-center">
+            <h1 class="fade-up-title">Next-Gen <span class="gradient-text">Developer</span> Intelligence</h1>
+            <p class="fade-up-subtitle">Explore the GitHub universe with premium glassmorphism data visualization and real-time API integration.</p>
+            <div class="hero-cta fade-up-btn">
+                <a href="#search-section" class="primary-btn">Start Exploring <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section id="search-section" class="search-container container">
+        <div class="search-glass-box">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="github-search" placeholder="Enter GitHub username (e.g. octocat)..." autocomplete="off">
+                <button id="search-btn" class="search-action-btn">Search</button>
+            </div>
+            <div class="filter-wrapper mt-3">
+                <span class="filter-label"><i class="fas fa-sliders-h"></i> Filters:</span>
+                <div class="filter-pills">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="repos">Repositories</button>
+                    <button class="filter-pill" data-filter="followers">Followers</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="container main-layout mt-5">
+        <!-- Profile Sidebar (Hidden initially) -->
+        <aside id="profile-card" class="glass-card profile-sidebar hidden">
+            <!-- Dynamic Content -->
+        </aside>
+
+        <!-- Data Grid -->
+        <div id="data-display" class="content-grid">
+            <!-- Welcome State -->
+            <div class="welcome-state text-center">
+                <div class="floating-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>Ready to Decode the Web?</h3>
+                <p>Enter a username above to fetch real-time intelligence from the GitHub API.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading State (Template) -->
+    <template id="skeleton-loader">
+        <div class="skeleton-card glass-card">
+            <div class="shimmer"></div>
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-line short"></div>
+            <div class="skeleton-line long"></div>
+        </div>
+    </template>
+
+    <!-- Error State (Template) -->
+    <div id="error-container" class="hidden">
+        <div class="error-box glass-card text-center">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <h4 id="error-title">Target Not Found</h4>
+            <p id="error-msg">The developer you are looking for does not exist in our database.</p>
+            <button class="retry-btn glass-btn" onclick="location.reload()">Retry Mission</button>
+        </div>
+    </div>
+
+    <!-- Modal for Repo Details -->
+    <div class="modal fade" id="repoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content glass-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="repoModalLabel">Repository Intelligence</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-content">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-4">
+        <div class="container text-center">
+            <p class="mb-0">Powered by <span class="gradient-text">GitHub API</span> &bull; Designed by NEXUS Architecture</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="glass-btn floating-action-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
